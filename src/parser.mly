@@ -182,7 +182,7 @@ let rec desugar_rchain chain s e =
 %token Enum Else False Forall Foreach Overload Function_ Mapping If_ In Inc Let_ Int Order Bool Cast
 %token Pure Register Return Scattered Sizeof Struct Then True TwoCaret TYPE Typedef
 %token Undefined Union Newtype With Val Constraint Throw Try Catch Exit Bitfield Constant
-%token Barr Depend Rreg Wreg Rmem Rmemt Wmem Wmv Wmvt Eamem Exmem Undef Unspec Nondet Escape
+%token Barr Depend Rreg Wreg Rmem Rmemt Wmem Leak Wmv Wmvt Eamem Exmem Undef Unspec Nondet Escape
 %token Repeat Until While Do Mutual Var Ref Configuration TerminationMeasure
 %token InternalPLet InternalReturn
 
@@ -616,6 +616,8 @@ effect:
     { mk_effect BE_rmemt $startpos $endpos }
   | Wmem
     { mk_effect BE_wmem $startpos $endpos }
+  | Leak
+    { mk_effect BE_leak $startpos $endpos }
   | Wmv
     { mk_effect BE_wmv $startpos $endpos }
   | Wmvt

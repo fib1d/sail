@@ -172,6 +172,7 @@ let kw_table =
      ("rmem",                    (fun x -> Rmem));
      ("rmemt",                   (fun x -> Rmemt));
      ("wmem",                    (fun x -> Wmem));
+     ("leak",                    (fun x -> Leak));
      ("wmv",                     (fun x -> Wmv));
      ("wmvt",                    (fun x -> Wmvt));
      ("eamem",                   (fun x -> Eamem));

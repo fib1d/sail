@@ -780,6 +780,7 @@ let string_of_base_effect_aux = function
   | BE_rmem -> "rmem"
   | BE_rmemt -> "rmemt"
   | BE_wmem -> "wmem"
+  | BE_leak -> "leak"
   | BE_eamem -> "eamem"
   | BE_exmem -> "exmem"
   | BE_wmv -> "wmv"
