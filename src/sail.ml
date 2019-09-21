@@ -470,7 +470,7 @@ let target name out_name ast type_envs =
          (l, Type_check.replace_env (Type_check.Env.set_prover None (Type_check.env_of_tannot tannot)) tannot)
      in
      Marshal.to_string (Ast_util.map_defs_annot remove_prover ast, Type_check.Env.set_prover None type_envs) [Marshal.Compat_32]
-     |> B64.encode
+     |> Base64.encode_exn
      |> output_string f;
      close_out f
 
